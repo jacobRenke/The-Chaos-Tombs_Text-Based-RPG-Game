@@ -1,0 +1,16 @@
+C:\GitHub\The-Chaos-Tombs_Text-Based-RPG-Game\The Chaos Tombs\The Chaos Tombs\bin\Debug\net5.0\The Chaos Tombs.exe
+C:\GitHub\The-Chaos-Tombs_Text-Based-RPG-Game\The Chaos Tombs\The Chaos Tombs\bin\Debug\net5.0\The Chaos Tombs.deps.json
+C:\GitHub\The-Chaos-Tombs_Text-Based-RPG-Game\The Chaos Tombs\The Chaos Tombs\bin\Debug\net5.0\The Chaos Tombs.runtimeconfig.json
+C:\GitHub\The-Chaos-Tombs_Text-Based-RPG-Game\The Chaos Tombs\The Chaos Tombs\bin\Debug\net5.0\The Chaos Tombs.runtimeconfig.dev.json
+C:\GitHub\The-Chaos-Tombs_Text-Based-RPG-Game\The Chaos Tombs\The Chaos Tombs\bin\Debug\net5.0\The Chaos Tombs.dll
+C:\GitHub\The-Chaos-Tombs_Text-Based-RPG-Game\The Chaos Tombs\The Chaos Tombs\bin\Debug\net5.0\ref\The Chaos Tombs.dll
+C:\GitHub\The-Chaos-Tombs_Text-Based-RPG-Game\The Chaos Tombs\The Chaos Tombs\bin\Debug\net5.0\The Chaos Tombs.pdb
+C:\GitHub\The-Chaos-Tombs_Text-Based-RPG-Game\The Chaos Tombs\The Chaos Tombs\obj\Debug\net5.0\The Chaos Tombs.csproj.AssemblyReference.cache
+C:\GitHub\The-Chaos-Tombs_Text-Based-RPG-Game\The Chaos Tombs\The Chaos Tombs\obj\Debug\net5.0\The Chaos Tombs.GeneratedMSBuildEditorConfig.editorconfig
+C:\GitHub\The-Chaos-Tombs_Text-Based-RPG-Game\The Chaos Tombs\The Chaos Tombs\obj\Debug\net5.0\The Chaos Tombs.AssemblyInfoInputs.cache
+C:\GitHub\The-Chaos-Tombs_Text-Based-RPG-Game\The Chaos Tombs\The Chaos Tombs\obj\Debug\net5.0\The Chaos Tombs.AssemblyInfo.cs
+C:\GitHub\The-Chaos-Tombs_Text-Based-RPG-Game\The Chaos Tombs\The Chaos Tombs\obj\Debug\net5.0\The Chaos Tombs.csproj.CoreCompileInputs.cache
+C:\GitHub\The-Chaos-Tombs_Text-Based-RPG-Game\The Chaos Tombs\The Chaos Tombs\obj\Debug\net5.0\The Chaos Tombs.dll
+C:\GitHub\The-Chaos-Tombs_Text-Based-RPG-Game\The Chaos Tombs\The Chaos Tombs\obj\Debug\net5.0\ref\The Chaos Tombs.dll
+C:\GitHub\The-Chaos-Tombs_Text-Based-RPG-Game\The Chaos Tombs\The Chaos Tombs\obj\Debug\net5.0\The Chaos Tombs.pdb
+C:\GitHub\The-Chaos-Tombs_Text-Based-RPG-Game\The Chaos Tombs\The Chaos Tombs\obj\Debug\net5.0\The Chaos Tombs.genruntimeconfig.cache
