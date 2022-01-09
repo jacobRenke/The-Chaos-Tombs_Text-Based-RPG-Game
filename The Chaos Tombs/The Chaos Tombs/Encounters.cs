@@ -8,6 +8,7 @@ namespace The_Chaos_Tombs
 {
     class Encounters
     {
+        static Random rand = new Random();
         //Encounter Generic
 
 
@@ -15,7 +16,7 @@ namespace The_Chaos_Tombs
         public static void FirstEnounter()
         {
             Console.WriteLine("You look around frantically look around for something to wield as a weapon.\n Conveniently, there is a large steel sword next to the doorway.");
-            Console.WriteLine("The *thing* you have awoken gets louder and louder. Snarling like a rabit dog but moving at the speed of a cheetah.");
+            Console.WriteLine("The *thing* you have awoken gets louder and louder. Snarling like a rabid dog but moving at the speed of a cheetah.");
             Console.ReadKey();
         }
 
@@ -47,24 +48,39 @@ namespace The_Chaos_Tombs
                 string input = Console.ReadLine();
                 if (input.ToLower() == "a" || input.ToLower() == "attack")
                 {
-                    //Attack                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+                    //Attack - maybe update this with multiple weapons.
+                    //Sword Attack
+                    Console.WriteLine("You thrust forward, sword in hand! The "+n+" strikes back at you!");
+                    int damage = p - Program.currentPlayer.armorValue;
+                    //Attack damage is equal to a random number between 0 and weapon value, plus a random number between 0-3.
+                    int attack = rand.Next(0, Program.currentPlayer.weaponValue) + rand.Next(1, 4);
+                    Console.WriteLine("You lose " + damage + "health and deal " + attack + " damage.");
+                    Program.currentPlayer.health -= damage;
+                    h -= attack;
                 }
-                if (input.ToLower() == "d" || input.ToLower() == "defend")
+                else if (input.ToLower() == "d" || input.ToLower() == "defend")
                 {
                     //Defend
+                    Console.WriteLine("You thrust forward, sword in hand! The " + n + " strikes back at you!");
+                    int damage = p - Program.currentPlayer.armorValue;
+                    int attack = rand.Next(0, Program.currentPlayer.weaponValue) + rand.Next(1, 4);
+                    Console.WriteLine("You lose " + damage + "health and deal " + attack + " damage.");
+                    Program.currentPlayer.health -= damage;
+                    h -= attack;
                 }
-                if (input.ToLower() == "r" || input.ToLower() == "run")
+                else if (input.ToLower() == "r" || input.ToLower() == "run")
                 {
                     //Run
                 }
-                if (input.ToLower() == "h" || input.ToLower() == "heal")
+                else if (input.ToLower() == "h" || input.ToLower() == "heal")
                 {
                     //Heal
                 }
                 else
                 {
-                    Console.WriteLine("Incorrect input.");
+                    Console.WriteLine("Try again, peasant.");
                 }
+                Console.ReadKey();
             }
         }
     }

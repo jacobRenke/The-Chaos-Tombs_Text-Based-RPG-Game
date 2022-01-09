@@ -14,5 +14,6 @@ namespace The_Chaos_Tombs
         public int damage = 1;
         public int armorValue = 0;
         public int healthPotion = 5;
+        public int weaponValue = 1;
     }
 }
