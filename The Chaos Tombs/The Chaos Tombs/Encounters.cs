@@ -27,7 +27,7 @@ namespace The_Chaos_Tombs
             int h = 0; //health 
             if(random)
             {
-
+                
             }
             else
             {
