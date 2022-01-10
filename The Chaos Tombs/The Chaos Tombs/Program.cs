@@ -4,12 +4,14 @@ namespace The_Chaos_Tombs
 {
     internal class Program
     {
+        //The below constructor creates the "Player" that will store the data of the user.
         public static Player currentPlayer = new Player();
         static void Main(string[] args)
         {
             Start();
         }
 
+        //The "Start" method will be what the user sees upon running the program.
         static void Start()
         {
             Console.WriteLine("---The Chaos Tombs---");
