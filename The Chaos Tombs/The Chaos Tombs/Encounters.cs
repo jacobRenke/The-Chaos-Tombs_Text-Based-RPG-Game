@@ -15,9 +15,16 @@ namespace The_Chaos_Tombs
         //Encounter 
         public static void FirstEnounter()
         {
-            Console.WriteLine("You look around frantically look around for something to wield as a weapon.\n Conveniently, there is a large steel sword next to the doorway.");
-            Console.WriteLine("The *thing* you have awoken gets louder and louder. Snarling like a rabid dog but moving at the speed of a cheetah.");
+            Console.WriteLine("You frantically look around for something to wield as a weapon.\n Conveniently, there is a large steel sword next to the doorway. You pick it up.");
             Console.ReadKey();
+            Console.Clear();
+            Console.WriteLine("The *thing* you have awoken gets louder and louder...");
+            Console.ReadKey();
+            Console.Clear();
+            Console.WriteLine("Suddenly, some creature with charred skin, hollow eyes, and horns sticking out of it's back rushes you from the hallway! *queue battle music*");
+            Console.ReadKey();
+            Console.Clear();
+            Combat(false, "Imp of Chaos", 1, 4);
         }
 
         //Encounter Tools
@@ -39,12 +46,20 @@ namespace The_Chaos_Tombs
 
             while (h > 0)
             {
+                Console.Clear();
+                Console.WriteLine("    ---"+n+"---");
+                Console.WriteLine("   "+ p + " Power / " + h + " Health");
+                Console.WriteLine("");
+                Console.WriteLine("");
                 Console.WriteLine(" ||==================||");
                 Console.WriteLine("|| (A)ttack  (D)efend ||");
                 Console.WriteLine("||                    ||");
                 Console.WriteLine("||  (R)un     (H)eal  ||");
                 Console.WriteLine(" ||==================||");
-                Console.WriteLine("    Potions: " + Program.currentPlayer.healthPotion + " Health: " + Program.currentPlayer.health);
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("   Potions: " + Program.currentPlayer.healthPotion + " Health: " + Program.currentPlayer.health);
+                Console.WriteLine("   Choose an action!");
                 string input = Console.ReadLine();
                 if (input.ToLower() == "a" || input.ToLower() == "attack")
                 {
@@ -56,7 +71,7 @@ namespace The_Chaos_Tombs
                         damage = 0;
                     //Attack damage is equal to a random number between 0 and weapon value, plus a random number between 0-3.
                     int attack = rand.Next(0, Program.currentPlayer.weaponValue) + rand.Next(1, 4);
-                    Console.WriteLine("You lose " + damage + "health and deal " + attack + " damage.");
+                    Console.WriteLine("You lose " + damage + " health and deal " + attack + " damage.");
                     Program.currentPlayer.health -= damage;
                     h -= attack;
                 }
@@ -109,6 +124,11 @@ namespace The_Chaos_Tombs
                         int potionValue = 5; //First instance of giving the amount of healing a potion does a value.
                         Console.WriteLine("You gain " + potionValue + " health.");
                         Program.currentPlayer.health += potionValue;
+                        Console.WriteLine("While you were healing, the" + n + " took advances on you and landed a blow.");
+                        int damage = (p / 2) - Program.currentPlayer.armorValue;
+                        if (damage < 0)
+                            damage = 0;
+                        Console.WriteLine("You lose " + damage + "health.");
                     }
                     Console.ReadKey();
                 }
