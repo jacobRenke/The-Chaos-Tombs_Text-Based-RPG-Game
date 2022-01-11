@@ -7,6 +7,9 @@ namespace The_Chaos_Tombs
         //The below constructor creates the "Player" that will store the data of the user.
         public static Player currentPlayer = new Player();
         public static bool Loop = true;
+        private static string tempName;
+        private static string answer;
+
         static void Main(string[] args)
         {
             Start();
@@ -15,16 +18,33 @@ namespace The_Chaos_Tombs
             {
                 Encounters.RandomEncounter();
             }
+
         }
 
         //The "Start" method will be what the user sees upon running the program.
         static void Start()
         {
-            Console.WriteLine("---The Chaos Tombs---");
+            Console.WriteLine("-------------------------");
+            Console.WriteLine("-------------------------");
+            Console.WriteLine("-----The Chaos Tombs-----");
+            Console.WriteLine("-------------------------");
+            Console.WriteLine("-------------------------");
             Console.ReadLine();
             Console.Clear();
             Console.WriteLine("What is your name, adventurer?");
-            currentPlayer.name = Console.ReadLine();
+            currentPlayer.tempName = Console.ReadLine();
+            Console.WriteLine("Your name is " + tempName + "? Please enter 'Yes' or 'No'.");
+            answer = Console.ReadLine();
+
+            if (answer.ToLower() == "yes")
+            {
+                tempName = currentPlayer.name;
+            }
+            else
+            {
+                Console.WriteLine("Please re-enter your name");
+            }
+               
             Console.Clear();
             Console.WriteLine("You wake in a cold, stone room.\n There is blood all over the walls.");
             Console.ReadLine();

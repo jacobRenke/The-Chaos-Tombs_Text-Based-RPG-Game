@@ -29,6 +29,7 @@ namespace The_Chaos_Tombs
 
         public static void BasicEncounter()
         {
+            Console.Clear();
             Console.WriteLine("You hear the snarls of another monster in the distant...ready yourself...");
             Console.ReadKey();
             Combat(true, "", 0, 0);
@@ -61,7 +62,7 @@ namespace The_Chaos_Tombs
             if(random)
             {
                 n = GetName();
-                p = rand.Next(1, 5);
+                p = rand.Next(1, 8);
                 h = rand.Next(1, 8);
             }
             else
@@ -74,10 +75,11 @@ namespace The_Chaos_Tombs
             while (h > 0)
             {
                 Console.Clear();
-                Console.WriteLine("    ---"+n+"---");
+                Console.WriteLine(" ---"+n+"---");
                 Console.WriteLine("   "+ p + " Power / " + h + " Health");
                 Console.WriteLine("");
                 Console.WriteLine("");
+                Console.WriteLine("        "+Program.currentPlayer.name);
                 Console.WriteLine(" ||==================||");
                 Console.WriteLine("|| (A)ttack  (D)efend ||");
                 Console.WriteLine("||                    ||");
@@ -110,7 +112,7 @@ namespace The_Chaos_Tombs
                     if (damage < 0)
                         damage = 0;
                     int attack = rand.Next(0, Program.currentPlayer.weaponValue) / 2;
-                    Console.WriteLine("You lose " + damage + "health and deal " + attack + " damage.");
+                    Console.WriteLine("You lose " + damage + " health and deal " + attack + " damage.");
                     Program.currentPlayer.health -= damage;
                     h -= attack;
                 }
@@ -119,7 +121,7 @@ namespace The_Chaos_Tombs
                     //Run
                     if (rand.Next(0, 2) == 0)
                     {
-                        Console.WriteLine("As you attempt to evade the " + n + " you lose your footing, allowing the " + n + "to strike you.");
+                        Console.WriteLine("As you attempt to evade the " + n + " you lose your footing, allowing the " + n + " to strike you.");
                         int damage = p - Program.currentPlayer.armorValue;
                         if (damage < 0) 
                             damage = 0;
@@ -155,7 +157,7 @@ namespace The_Chaos_Tombs
                         int damage = (p / 2) - Program.currentPlayer.armorValue;
                         if (damage < 0)
                             damage = 0;
-                        Console.WriteLine("You lose " + damage + "health.");
+                        Console.WriteLine("You lose " + damage + " health.");
                     }
                     Console.ReadKey();
                 }
@@ -163,11 +165,28 @@ namespace The_Chaos_Tombs
                 {
                     Console.WriteLine("Try again, peasant.");
                 }
+
+                //Death
+                if (Program.currentPlayer.health <= 0)
+                {
+                    Console.Clear();
+                    Console.WriteLine("Your wounds become too much to handle...\nNo longer can you hold the sword straight...\nYou've lost too much blood... \nThe " + n + " rears back for it's final attack, landing a fatal blow.You drift off in to eternal slumber...");
+                    Console.ReadKey();
+                    Console.Clear();
+                    Console.WriteLine("-------------------");
+                    Console.WriteLine("-------------------");
+                    Console.WriteLine("-----GAME OVER-----");
+                    Console.WriteLine("-------------------");
+                    Console.WriteLine("-------------------");
+                    Console.ReadKey();
+                    System.Environment.Exit(0);
+                }
                 Console.ReadKey();
             }
             Console.Clear();
             int c = rand.Next(2, 25);
             Console.WriteLine("You stand victorious over the " + n + "!. This is likely not the last of them...\nYou search through it's dead corpse and find "+ c +" coins.");
+            Program.currentPlayer.coins += c;
             Console.ReadKey();
         }
 
