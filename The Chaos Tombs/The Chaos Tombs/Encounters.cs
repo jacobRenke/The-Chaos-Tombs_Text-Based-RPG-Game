@@ -35,22 +35,36 @@ namespace The_Chaos_Tombs
             Combat(true, "", 0, 0);
         }
 
+        public static void BossEncounter()
+        {
+            Console.Clear();
+            Console.WriteLine("You've reached the end of the hallway...there are piles of human bodies just outside a large metal door...\nThey are all ripped to shreds.");
+            Console.WriteLine("Inside you hear the snapping of bones, and what sounds like a grizzly bear roaring.");
+            Console.ReadKey();
+            Combat(false, "Tzench, Behemoth of Torment", 10, 30);
+        }
+
         //Add 2-3 more encounter types here! 
 
         //Encounter Tools
         public static void RandomEncounter()
-        {
+        {   
+            //20% chance for boss fight. Might add a function so when boss fight is done we can move to a new level.
             switch (rand.Next(0, 4))
             {
-                case 0: BasicEncounter();
+                case 0: 
+                    BasicEncounter();
                     break;
-                case 1: //Add more encounters
+                case 1:
+                    BasicEncounter();
                     break;
-                case 2: //Add more encounters
+                case 2:
+                    BasicEncounter();
                     break;
-                case 3: //Add more encounters
+                case 3:
+                    BasicEncounter();
                     break;
-                case 4: //Add more encounters
+                case 4: BossEncounter();
                     break;
             }
         }
@@ -62,8 +76,8 @@ namespace The_Chaos_Tombs
             if(random)
             {
                 n = GetMonsterName();
-                p = rand.Next(1, 10);
-                h = rand.Next(1, 10);
+                p = Program.currentPlayer.DetermineStrength();
+                h = Program.currentPlayer.DetermineStamina();
             }
             else
             {
@@ -75,16 +89,16 @@ namespace The_Chaos_Tombs
             while (h > 0)
             {
                 Console.Clear();
-                Console.WriteLine(" ---"+n+"---");
+                Console.WriteLine("   Enemy:-"+n+"-");
                 Console.WriteLine("   "+ p + " Power / " + h + " Health");
                 Console.WriteLine("");
                 Console.WriteLine("");
-                Console.WriteLine("        "+Program.currentPlayer.name);
-                Console.WriteLine(" ||==================||");
-                Console.WriteLine("|| (A)ttack  (D)efend ||");
-                Console.WriteLine("||                    ||");
-                Console.WriteLine("||  (R)un     (H)eal  ||");
-                Console.WriteLine(" ||==================||");
+                Console.WriteLine("     Player: "+Program.currentPlayer.name);
+                Console.WriteLine("  ||==================||");
+                Console.WriteLine(" || (A)ttack  (D)efend ||");
+                Console.WriteLine(" ||                    ||");
+                Console.WriteLine(" ||  (R)un     (H)eal  ||");
+                Console.WriteLine("  ||==================||");
                 Console.WriteLine("");
                 Console.WriteLine("");
                 Console.WriteLine("   Potions: " + Program.currentPlayer.healthPotion + " Health: " + Program.currentPlayer.health);
@@ -108,7 +122,7 @@ namespace The_Chaos_Tombs
                 {
                     //Defend
                     Console.WriteLine("The " + n + " strikes! You have anticipated the attack and raised your sword to defend.");
-                    int damage = (p / 4) - Program.currentPlayer.armorValue;
+                    int damage = (p / 2) - Program.currentPlayer.armorValue;
                     if (damage < 0)
                         damage = 0;
                     int attack = rand.Next(0, Program.currentPlayer.weaponValue) / 2;
@@ -186,6 +200,8 @@ namespace The_Chaos_Tombs
             Console.Clear();
             int c = rand.Next(2, 25);
             Console.WriteLine("You stand victorious over the " + n + "!. This is likely not the last of them...\nYou search through it's dead corpse and find "+ c +" coins.");
+            Console.Clear();
+            Console.WriteLine("Mustering your strength, you proceed down the never ending hallway...");
             Program.currentPlayer.coins += c;
             Console.ReadKey();
         }
