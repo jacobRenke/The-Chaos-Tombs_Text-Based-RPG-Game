@@ -61,9 +61,9 @@ namespace The_Chaos_Tombs
             int h = 0; //health 
             if(random)
             {
-                n = GetName();
-                p = rand.Next(1, 8);
-                h = rand.Next(1, 8);
+                n = GetMonsterName();
+                p = rand.Next(1, 10);
+                h = rand.Next(1, 10);
             }
             else
             {
@@ -191,7 +191,7 @@ namespace The_Chaos_Tombs
         }
 
         //This method will generate random names for us to use during the dungeon. I can always come back and add more to spice things up.
-        public static string GetName()
+        public static string GetMonsterName()
         {
             switch(rand.Next(0, 5))
             {
