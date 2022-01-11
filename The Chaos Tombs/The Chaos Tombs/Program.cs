@@ -6,10 +6,15 @@ namespace The_Chaos_Tombs
     {
         //The below constructor creates the "Player" that will store the data of the user.
         public static Player currentPlayer = new Player();
+        public static bool Loop = true;
         static void Main(string[] args)
         {
             Start();
             Encounters.FirstEnounter();
+            while (Loop == true)
+            {
+                Encounters.RandomEncounter();
+            }
         }
 
         //The "Start" method will be what the user sees upon running the program.

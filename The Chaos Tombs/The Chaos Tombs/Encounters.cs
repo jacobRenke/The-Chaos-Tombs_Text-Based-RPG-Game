@@ -27,7 +27,32 @@ namespace The_Chaos_Tombs
             Combat(false, "Imp of Chaos", 1, 4);
         }
 
+        public static void BasicEncounter()
+        {
+            Console.WriteLine("You hear the snarls of another monster in the distant...ready yourself...");
+            Console.ReadKey();
+            Combat(true, "", 0, 0);
+        }
+
+        //Add 2-3 more encounter types here! 
+
         //Encounter Tools
+        public static void RandomEncounter()
+        {
+            switch (rand.Next(0, 4))
+            {
+                case 0: BasicEncounter();
+                    break;
+                case 1: //Add more encounters
+                    break;
+                case 2: //Add more encounters
+                    break;
+                case 3: //Add more encounters
+                    break;
+                case 4: //Add more encounters
+                    break;
+            }
+        }
         public static void Combat(bool random, string name, int power, int health)  //this determines who is in the encounter
         {
             string n = ""; //name
@@ -35,7 +60,9 @@ namespace The_Chaos_Tombs
             int h = 0; //health 
             if(random)
             {
-                
+                n = GetName();
+                p = rand.Next(1, 5);
+                h = rand.Next(1, 8);
             }
             else
             {
@@ -138,6 +165,31 @@ namespace The_Chaos_Tombs
                 }
                 Console.ReadKey();
             }
+            Console.Clear();
+            int c = rand.Next(2, 25);
+            Console.WriteLine("You stand victorious over the " + n + "!. This is likely not the last of them...\nYou search through it's dead corpse and find "+ c +" coins.");
+            Console.ReadKey();
+        }
+
+        //This method will generate random names for us to use during the dungeon. I can always come back and add more to spice things up.
+        public static string GetName()
+        {
+            switch(rand.Next(0, 5))
+            {
+                case 0:
+                    return "Greater Daemon";
+                case 1: 
+                    return "Spawn of Darkness";
+                case 2:
+                    return "Imp of Chaos";
+                case 3:
+                    return "Hound of the Void";
+                case 4:
+                    return "Succulent Succubus";
+                case 5:
+                    return "Mind-Flayed";
+            }
+            return "Decayed Daemon of Torment";
         }
     }
 }
