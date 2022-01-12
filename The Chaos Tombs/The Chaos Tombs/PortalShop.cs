@@ -8,34 +8,34 @@ namespace The_Chaos_Tombs
 {
     public class PortalShop
     {
-        static double armorMod;
-        static double weaponMod;
-        static double difficultyMod;
-        
-
-        public static void OpenShopPortal(Player currentPlayer)
+        public static void OpenShopPortal(Player p)
         {
-            armorMod = currentPlayer.armorValue;
-            weaponMod = currentPlayer.weaponValue;
-            difficultyMod = currentPlayer.mods;
-
-            RunShop(currentPlayer);
+            RunShop(p);
         }
 
-        public static void RunShop(Player currentPlayer)
+        public static void RunShop(Player p)
         {
+            int potionP;
+            double armorP;
+            double weaponP;
+            int difficultyP;
+
             while(true)
             {
-                Console.WriteLine("    Portal Shop      ");
-                Console.WriteLine("");
-                Console.WriteLine("      0000000      ");
-                Console.WriteLine("   0000|    |0000       ");
-                Console.WriteLine("000|(W)eapon:  |000      ");
-                Console.WriteLine("000|(A)rmor;     |000      ");
-                Console.WriteLine("000|(P)otion;    |000     ");
-                Console.WriteLine("000|(M)od        |000      ");
-                Console.WriteLine("   0000|    |0000       ");
-                Console.WriteLine("      0000000      ");
+
+                potionP = 20 + 10 * p.mods;
+                armorP = 100 * p.armorValue;
+                weaponP = 100 * (p.weaponValue + 1);
+                difficultyP = 300 + 100 * p.mods;
+
+                Console.WriteLine("     Portal Shop");
+                Console.WriteLine("[]__________________[]");
+                Console.WriteLine("||(W)eapon:"+ weaponP);
+                Console.WriteLine("||(A)rmor:"+ armorP);
+                Console.WriteLine("||(P)otion:" + potionP);
+                Console.WriteLine("||(M)od:"+ difficultyP);
+                Console.WriteLine("[]__________________[]");
+                //Wait for input
             }
         }
     }
