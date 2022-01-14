@@ -146,6 +146,7 @@ namespace The_Chaos_Tombs
                     {
                         Console.WriteLine("You decide to not tempt fate. With haste, you run from the " +n+".");
                         Console.ReadKey();
+                        PortalShop.RunShop(Program.currentPlayer);
                         //go to store or town, etc
                     }
                     
@@ -198,7 +199,7 @@ namespace The_Chaos_Tombs
                 Console.ReadKey();
             }
             Console.Clear();
-            int c = rand.Next(2, 25);
+            int c = Program.currentPlayer.GetCoins();
             Console.WriteLine("You stand victorious over the " + n + "!. This is likely not the last of them...\nYou search through it's dead corpse and find "+ c +" coins.");
             Console.Clear();
             Console.WriteLine("Mustering your strength, you proceed down the never ending hallway...");
