@@ -146,6 +146,10 @@ namespace The_Chaos_Tombs
                     {
                         Console.WriteLine("You decide to not tempt fate. With haste, you run from the " +n+".");
                         Console.ReadKey();
+                        Console.Clear();
+                        Console.WriteLine("Seemingly out of nowhere, a large green portal appears in the wall.\n Considering you are in an unknown place full of demons, the Green Portal might not be so bad.");
+                        Console.ReadLine();
+                        Console.Clear();
                         PortalShop.RunShop(Program.currentPlayer);
                         //go to store or town, etc
                     }
