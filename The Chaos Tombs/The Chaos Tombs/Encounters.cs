@@ -189,7 +189,7 @@ namespace The_Chaos_Tombs
                 if (Program.currentPlayer.health <= 0)
                 {
                     Console.Clear();
-                    Console.WriteLine("Your wounds become too much to handle...\nNo longer can you hold the sword straight...\nYou've lost too much blood... \nThe " + n + " rears back for it's final attack, landing a fatal blow.You drift off in to eternal slumber...");
+                    Console.WriteLine("Your wounds become too much to handle...\nNo longer can you hold the sword straight...\nYou've lost too much blood... \nThe " + n + " rears back for it's final attack, landing a fatal blow. You drift off in to eternal slumber...");
                     Console.ReadKey();
                     Console.Clear();
                     Console.WriteLine("-------------------");
