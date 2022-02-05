@@ -11,7 +11,7 @@ Concepts used within the Application.
 
 To play:
 
-: * Select your adventurer's name
+* Select your adventurer's name
 *Follow on screen dialog
 *Input your actions based upon the actions presented on screen denoted within the "( )"
     *For example, (A)ttack - means attack, and you would input/enter "A" or "a", then press enter
