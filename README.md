@@ -9,7 +9,7 @@ Concepts used within the Application.
 3. Inheritence 
 4. Randomizing encounters
 
-To play: 
+To play 
 
 -Select your adventurer's name
 -Follow on screen dialog
